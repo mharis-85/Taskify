@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useState} from 'react';
 //import logo from './logo.svg';
 import './App.css';
+import  InputField  from './components/InputField';
 
 // let name:string;
 // let role:[number, string]; //tuple
@@ -15,11 +16,18 @@ import './App.css';
 // }
 
 // let peoples:Person[]; //array of obj
+
+//let printName:(name:string)=>void;
+
   
-function App() {
+const App:React.FC=()=> {
+
+  const [todo, setTodo]=useState<string>('');
+  console.log(todo);
   return (
     <div className="App">
-      Hello
+      <span className="heading">Taskify</span>
+      <InputField todo={todo} setTodo={setTodo} />
     </div>
   );
 }
